@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    session_start();    
     header('Content-type: text/html; charset=iso-8859-1');
 ?>
 <!DOCTYPE html>

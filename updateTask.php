@@ -54,12 +54,12 @@
         $resultado = mysqli_fetch_assoc($resul);
         echo '
             <form class="form-signin" method="POST" action="#">
-                <h2 class="form-signin-heading">Edição Tasks</h2>
+                <h2 class="form-signin-heading">Edicao Tasks</h2>
                 </br>
                 <label for="name" class="sr-only">Nome</label>
-                <input type="text" class="form-control" name="nome" placeholder="Nome da task" required/>
+                <input type="text" class="form-control" name="nome" placeholder="Nome da task" required/></br>
                 <label for="descricao" class="sr-only">Descrição</label>
-                <textarea rows="4" class="form-control" name="descricao" placeholder="Descrição da task" required></textarea>
+                <textarea rows="4" class="form-control" name="descricao" placeholder="Descricao da task" required></textarea>
                 <br/>
                 <button type="submit" class="btn btn-lg btn-primary btn-block">Editar Task</button>
             </form>
