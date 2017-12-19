@@ -19,7 +19,7 @@
 			<link rel="icon" href="https://www.seald.io/img/3_PartThree_IconTitle.svg" type="image/x-icon">
 	</head>
 	<body>
-		<header class="task">
+		<header>
 				<h1 class="display-4">MyTasks</h1>
 				<p>Bem vindo, <?php echo $_SESSION['usuNome']; ?></p>
 		</header>

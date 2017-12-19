@@ -15,7 +15,7 @@
         <link rel="icon" href="https://www.seald.io/img/3_PartThree_IconTitle.svg" type="image/x-icon">
     </head>
     <body>        
-        <header class="index">
+        <header>
             <h1 class="display-4">Bem vindo ao MyTasks</h1>
             <p>Todas suas tarefas em um só lugar</p>
         </header>
@@ -44,7 +44,7 @@
             </p>
         </div>
         <div class"containercontainer-fluid">
-            <footer class="index">
+            <footer>
                 <a>Flávio Meloti @ 2017</a>
             </footer>
         </div>
