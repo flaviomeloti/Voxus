@@ -64,7 +64,7 @@
                 <button type="submit" class="btn btn-lg btn-primary btn-block">Editar Task</button>
             </form>
             <form class="form-signin" method="POST" action="excluirTask.php">
-                <button type="submit" class="btn btn-lg btn-primary btn-block">Excluir Task</button>
+                <button type="submit" class="btn btn-lg btn-secondary btn-block">Excluir Task</button>
             </form>
         ';
         $_SESSION['idTask'] = $resultado['id'];

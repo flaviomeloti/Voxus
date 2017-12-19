@@ -22,7 +22,7 @@
             <h1 class="display-4">MyTasks</h1>
             <p>Bem vindo, <?php echo $_SESSION['usuNome']; ?></p>
         </header>
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs">        
             <li class="nav-item">
                 <a class="nav-link active" href="tarefas.php">MyTasks</a>
             </li>

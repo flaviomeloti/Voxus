@@ -3,9 +3,9 @@
     include("conexao.php");    
         $email = $_POST['email'];
         $senha = $_POST['senha'];
-        $buscaUsuario = "SELECT * FROM usuarios WHERE email = '$email' && senha = '$senha'"; //Comando que irá buscar email e senha no BD
-        $resul = mysqli_query($conexao, $buscaUsuario); //Consulta nesse BD (conexao) o seguinte comando (buscaUsuario)
-        $resultado = mysqli_fetch_assoc($resul); //Resultado da consulta
+        $buscaUsuario = "SELECT * FROM usuarios WHERE email = '$email' && senha = '$senha'";
+        $resul = mysqli_query($conexao, $buscaUsuario);
+        $resultado = mysqli_fetch_assoc($resul);
         if(isset($resultado)){
             $_SESSION['usuId'] = $resultado['id'];
             $_SESSION['usuNome'] = $resultado['nome'];

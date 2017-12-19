@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 <!DOCTYPE html>
   <html lang="pt-BR">
@@ -32,13 +32,17 @@ session_start();
                         </label>                    
                     </div>   
                     <button class="btn btn-lg btn-primary btn-block" type="submit" value="entrar" name="entrar" id="entrar">Entrar</button>
-            </form>
+            </form>   
+            <form class="form-signin" action="cadastro.php" method="post">
+                <button class="btn btn-lg btn-secondary btn-block" type="submit" value="cadastro" name="cadastro" id="cadastro">Cadastrar</button>
+            </form>         
             <p style="text-align:center; color:red; margin:3px">
-                <?php if(isset($_SESSION['erroLogin'])){
-                    echo $_SESSION['erroLogin'];
-                    unset ($_SESSION['erroLogin']);
-                }?>
-
+                <?php 
+                    if(isset($_SESSION['erroLogin'])){
+                        echo $_SESSION['erroLogin'];
+                        unset ($_SESSION['erroLogin']);
+                    }
+                ?>
             </p>
         </div>
         <div class"containercontainer-fluid">
