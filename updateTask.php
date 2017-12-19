@@ -47,8 +47,8 @@
                     $update = mysqli_query($conexao, $editaTask);
                     header("Location: tarefas.php");
                 }else{
-                    $select = $_POST['tasks'];
-                    $buscaTask = "SELECT * FROM tasks WHERE nome = '$select'";
+                    $select = $_POST['tarefa'];                   
+                    $buscaTask = "SELECT * FROM tasks WHERE id = '$select'";
                     $resul = mysqli_query($conexao, $buscaTask);
                     $resultado = mysqli_fetch_assoc($resul);
                     echo '
@@ -56,9 +56,9 @@
                             <h2 class="form-signin-heading">Edicao Tasks</h2>
                             </br>
                             <label for="name" class="sr-only">Nome</label>
-                            <input type="text" class="form-control" name="nome" placeholder="Nome da task" required/></br>
+                            <input type="text" class="form-control" name="nome" placeholder="'.$resultado['nome'].'" required/></br>
                             <label for="descricao" class="sr-only">Descrição</label>
-                            <textarea rows="4" class="form-control" name="descricao" placeholder="Descricao da task" required></textarea>
+                            <textarea rows="4" class="form-control" name="descricao" placeholder="'.$resultado['descricao'].'" required></textarea>
                             <br/>
                             <button type="submit" class="btn btn-lg btn-primary btn-block">Editar Task</button>
                         </form>

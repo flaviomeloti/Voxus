@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`) VALUES
 (1, 'Flávio Meloti', 'flaviomeloti@gmail.com', 'senha123'),
-(2, 'Fernanda Aveiro', 'fernanda.aveiro@voxus.tv', 'senha123');
+(2, 'Fernanda', 'fernanda@email.com', 'senha321');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

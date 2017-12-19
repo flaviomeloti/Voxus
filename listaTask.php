@@ -12,7 +12,7 @@
     }else{
         $resul = mysqli_query($conexao, $buscaTasks);
         while ($resultado = mysqli_fetch_array($resul, MYSQLI_ASSOC)) {
-            echo "<option value='".$resultado['nome']."'>".$resultado['nome']."</option>"; 
+            echo "<option value='".$resultado['id']."'>".$resultado['nome']."</option>"; 
         }
     }
 

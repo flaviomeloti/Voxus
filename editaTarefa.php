@@ -41,7 +41,7 @@
             </br>            
             <form class="form-signin" method="POST" action="updateTask.php">
                 <h2 class="form-signin-heading">Minhas Tasks</h2></br>
-                <select name="tasks" class="custom-select">
+                <select name="tarefa" class="custom-select">
                     <?php
                         include("listaTask.php");
                     ?>
