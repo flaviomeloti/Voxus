@@ -1,6 +1,9 @@
 <?php
 	session_start(); 
 	header('Content-type: text/html; charset=iso-8859-1');
+	if(!isset($_SESSION['usuId'])){
+        header("Location: index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
