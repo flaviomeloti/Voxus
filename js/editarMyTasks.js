@@ -1,0 +1,3 @@
+function funcaoParaExecutar() {
+    alert('teste!!');
+}
