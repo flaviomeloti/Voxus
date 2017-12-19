@@ -4,6 +4,10 @@
     $id_usuario =  $_SESSION['usuId'];
     $buscaTasks = "SELECT * FROM tasks WHERE id_usuario = $id_usuario";
     $resul = mysqli_query($conexao, $buscaTasks); 
+    $resultado = mysqli_fetch_array($resul, MYSQLI_ASSOC);
+    if(!isset($resultado)){
+        echo "</br><h3><small class='text-muted'>Sem Tasks</small></h3><img width='200px' height='200px'  src='src/images/multitasking.png'/>";
+    }
     while ($resultado = mysqli_fetch_array($resul, MYSQLI_ASSOC)) {
         echo "
         </br>
