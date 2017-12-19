@@ -25,7 +25,7 @@
 				<label for="name" class="sr-only">Nome</label>
 				<input type="text" class="form-control" name="nome" placeholder="Nome completo" required/></br>
 				<label for="email" class="sr-only">E-mail</label>
-				<input type="email" class="form-control" name="email" placeholder="e-mail" required/>
+				<input type="email" class="form-control" name="email" placeholder="e-mail" required/></br>
                 <label for="senha" class="sr-only">Senha</label>
 				<input type="password" class="form-control" name="senha" placeholder="senha" required/>
 				<button type="submit" class="btn btn-lg btn-primary btn-block">Cadastrar</button>
@@ -42,6 +42,7 @@
                     }
                 ?>
             </p>
+        </div>
         <div class"containercontainer-fluid">
             <footer class="index">
                 <a>Flávio Meloti @ 2017</a>
