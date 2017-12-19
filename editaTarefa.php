@@ -38,15 +38,22 @@
             </li>
         </ul>
         <div class="container">
-        </br>
+            </br>            
             <form class="form-signin" method="POST" action="updateTask.php">
+                <h2 class="form-signin-heading">Minhas Tasks</h2></br>
                 <select name="tasks" class="custom-select">
-                    <option value="task">Selecione a Task</option>
                     <?php
                         include("listaTask.php");
                     ?>
                 </select>
-                <button type="submit" class="btn btn-sm btn-primary">OK</button>
+                <?php
+                    if(isset($_SESSION['buttonDisableList'])){
+                        echo $_SESSION['buttonDisableList'];
+                        unset ($_SESSION['buttonDisableList']);
+                    }else{
+                        echo '<button type="submit" class="btn btn-primary">OK</button>';
+                    }
+                ?>                
             </form>
             </div>
             <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"> </script>
