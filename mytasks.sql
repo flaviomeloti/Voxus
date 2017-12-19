@@ -47,7 +47,7 @@ INSERT INTO `tasks` (`id`, `id_usuario`, `nome`, `descricao`) VALUES
 (2, 1, 'Criar um projeto para Voxus.', 'Desenvolver um projeto de tasks até segunda-feira para Voxus.'),
 (3, 1, 'Fazer compras.', 'Fazer compras no próximo domingo.'),
 (4, 2, 'Ir no casamento.', 'Ir no casamento dia 22/Dez.'),
-(6, 1, 'Arrumar a casa.', 'Arrumar a casa todos os dias as 9h.');
+(5, 1, 'Arrumar a casa.', 'Arrumar a casa todos os dias as 9h.');
 
 -- --------------------------------------------------------
 
