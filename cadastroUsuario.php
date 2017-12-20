@@ -16,7 +16,7 @@
         if(isset($resul)){
             echo '
                 <script>
-                    alert("Usuário Cadastrado com sucesso!");
+                    alert("Usuário cadastrado com sucesso!");
                     window.location.href = "index.php";
                 </script>
             ';

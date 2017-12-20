@@ -41,13 +41,17 @@
 		</ul>
 		<div class="container">
 			</br>
-			<form class="form-signin" method="POST" action="enviaTask.php">
+			<form class="form-signin" method="POST" enctype="multipart/form-data" action="enviaTask.php">
 				<h2 class="form-signin-heading">Novas Tasks</h2>
 				</br>
 				<label for="name" class="sr-only">Nome</label>
-				<input type="text" class="form-control" name="nome" placeholder="Nome da task" required/><br/>
+				<input type="text" class="form-control" name="nome" placeholder="Nome da task" required/>
+		
 				<label for="descricao" class="sr-only">Descrição</label>
 				<textarea rows="4" class="form-control" name="descricao" placeholder="Descricao da task" required></textarea>
+				</br>
+				<label for="anexo" class="sr-only">Anexo</label>
+				<input type="file" class="form-control" name="anexo"/><br/>
 				<br/><br/>
 				<button type="submit" class="btn btn-lg btn-primary btn-block">Cadastrar Task</button>
 			</form>

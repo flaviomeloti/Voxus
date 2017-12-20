@@ -44,34 +44,41 @@
                     $nome = $_POST['nome'];
                     $descricao = $_POST['descricao'];        
                     $id = $_SESSION['idTask'];
-                    if($_POST['nome'] == "" && $_POST['descricao'] == ""){
+                    if($_POST['nome'] == "" && $_POST['descricao'] == "" && $_FILES['anexo'] == ""){
                         header("Location: tarefas.php");
-                    }elseif($_POST['nome'] == ""){
-                        $editaTask = "UPDATE `tasks` SET `descricao` = '$descricao' WHERE `tasks`.`id` = '$id' ";
-                        $update = mysqli_query($conexao, $editaTask);
-                        header("Location: tarefas.php");
-                    }elseif($_POST['descricao'] == ""){
+                    }elseif($_POST['nome'] <> ""){
                         $editaTask = "UPDATE `tasks` SET `nome` = '$nome' WHERE `tasks`.`id` = '$id' ";
                         $update = mysqli_query($conexao, $editaTask);
-                        header("Location: tarefas.php");
-                    }else{
-                        $editaTask = "UPDATE `tasks` SET `nome` = '$nome', `descricao` = '$descricao' WHERE `tasks`.`id` = '$id' ";
+                    }elseif($_POST['descricao'] <> ""){
+                        $editaTask = "UPDATE `tasks` SET `descricao` = '$descricao' WHERE `tasks`.`id` = '$id' ";
                         $update = mysqli_query($conexao, $editaTask);
-                        header("Location: tarefas.php");
+                    }elseif($_FILES["anexo"]["error"] == 0){
+                        unlink("anexos/".$_SESSION['anexoAntigo']);
+                        $nomeAnexo;
+                        $extensao = strtolower(substr($_FILES['anexo']['name'], -4));
+                        $nomeAnexo = time().$extensao;
+                        $dir = "anexos/";
+                        move_uploaded_file($_FILES['anexo']['tmp_name'], $dir.$nomeAnexo);
+                        $editaTask = "UPDATE `tasks` SET `anexo` = '$nomeAnexo' WHERE `tasks`.`id` = '$id' ";
+                        $update = mysqli_query($conexao, $editaTask);
                     }
+                        header("Location: tarefas.php");
                 }else{
                     $select = $_POST['tarefa'];                   
                     $buscaTask = "SELECT * FROM tasks WHERE id = '$select'";
                     $resul = mysqli_query($conexao, $buscaTask);
                     $resultado = mysqli_fetch_assoc($resul);
                     echo '
-                        <form class="form-signin" method="POST" action="#">
+                        <form class="form-signin" method="POST" action="#" enctype="multipart/form-data">
                             <h2 class="form-signin-heading">Edicao Tasks</h2>
                             </br>
                             <label for="name" class="sr-only">Nome</label>
                             <input type="text" class="form-control" name="nome" placeholder="'.$resultado['nome'].'"/></br>
                             <label for="descricao" class="sr-only">Descrição</label>
                             <textarea rows="4" class="form-control" name="descricao" placeholder="'.$resultado['descricao'].'"></textarea>
+                            <label for="anexo" class="sr-only">Anexo</label>
+                            <input type="file" class="form-control" name="anexo"/></br>
+                            <ul class="nav nav-tabs"><li class="nav-item"><a href="anexos/'.$resultado['anexo'].'" target="_blank">'.$resultado['anexo'].'</a></li></ul>
                             <br/>
                             <button type="submit" class="btn btn-lg btn-primary btn-block">Editar Task</button>
                         </form>
@@ -80,6 +87,7 @@
                         </form>
                     ';
                     $_SESSION['idTask'] = $resultado['id'];
+                    $_SESSION['anexoAntigo'] = $resultado['anexo'];
                 }    
             ?>
             </div>

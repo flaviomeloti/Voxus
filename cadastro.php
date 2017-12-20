@@ -22,6 +22,7 @@
         <div class="container">
             <form class="form-signin" method="POST" action="cadastroUsuario.php">
 				<h2 class="form-signin-heading">Novo Usuário</h2>
+                </br>
 				<label for="name" class="sr-only">Nome</label>
 				<input type="text" class="form-control" name="nome" placeholder="Nome completo" required/></br>
 				<label for="email" class="sr-only">E-mail</label>

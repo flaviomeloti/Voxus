@@ -16,6 +16,9 @@
         $id = $resultado['id'];
         echo "<h3><small class='text-muted'>Tarefa:</small></h3> ".$resultado['nome'] . "</br></br>";
         echo "<h3><small class='text-muted'>Descricao:</small></h3> ".$resultado['descricao'] . "</br>";
+        if($resultado['anexo'] <> ""){
+            echo "</br><a href='anexos/".$resultado['anexo']."' target='_blank'>Anexo</a>";
+        }        
         echo "<hr>";        
     }
     echo "</br>";
