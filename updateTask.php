@@ -73,13 +73,11 @@
                             <h2 class="form-signin-heading">Edicao Tasks</h2>
                             </br>
                             <label for="name" class="sr-only">Nome</label>
-                            <input type="text" class="form-control" name="nome" placeholder="'.$resultado['nome'].'"/></br>
+                            <input type="text" class="form-control" name="nome" placeholder="'.$resultado['nome'].'"/>
                             <label for="descricao" class="sr-only">Descrição</label>
                             <textarea rows="4" class="form-control" name="descricao" placeholder="'.$resultado['descricao'].'"></textarea>
                             <label for="anexo" class="sr-only">Anexo</label>
                             <input type="file" class="form-control" name="anexo"/></br>
-                            <ul class="nav nav-tabs"><li class="nav-item"><a href="anexos/'.$resultado['anexo'].'" target="_blank">'.$resultado['anexo'].'</a></li></ul>
-                            <br/>
                             <button type="submit" class="btn btn-lg btn-primary btn-block">Editar Task</button>
                         </form>
                         <form class="form-signin" method="POST" action="excluirTask.php">
