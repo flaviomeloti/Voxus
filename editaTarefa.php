@@ -33,9 +33,11 @@
             <li class="nav-item">
 						<a class="nav-link active" href="editaTarefa.php">Edit/Delete Task</a>
 			</li>
-            <li class="nav-item">
-                <a class="nav-link" href="sair.php">Sair</a>
-            </li>
+            <ul class="nav nav-tabs" id="bSair">
+                <li class="nav-item">
+                    <a class="nav-link active" href="sair.php">Sair</a>
+                </li>
+            </ul>
         </ul>
         <div class="container">
             </br>            

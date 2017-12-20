@@ -24,18 +24,20 @@
 				<p>Bem vindo, <?php echo $_SESSION['usuNome']; ?></p>
 		</header>
 		<ul class="nav nav-tabs">
-				<li class="nav-item">
-						<a class="nav-link" href="tarefas.php">MyTasks</a>
-				</li>
-				<li class="nav-item">
-						<a class="nav-link active" href="novaTarefa.php">New Task</a>
-				</li>
-				<li class="nav-item">
-						<a class="nav-link" href="editaTarefa.php">Edit/Delete Task</a>
-				</li>
-				<li class="nav-item">
-						<a class="nav-link" href="sair.php">Sair</a>
-				</li>
+			<li class="nav-item">
+				<a class="nav-link" href="tarefas.php">MyTasks</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link active" href="novaTarefa.php">New Task</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="editaTarefa.php">Edit/Delete Task</a>
+			</li>
+			<ul class="nav nav-tabs" id="bSair">
+			<li class="nav-item">
+				<a class="nav-link active" href="sair.php">Sair</a>
+			</li>
+            </ul>
 		</ul>
 		<div class="container">
 			</br>

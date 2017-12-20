@@ -1,3 +1,0 @@
-function funcaoParaExecutar() {
-    alert('teste!!');
-}
