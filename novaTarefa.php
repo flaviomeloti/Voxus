@@ -52,7 +52,6 @@
 				</br>
 				<label for="anexo" class="sr-only">Anexo</label>
 				<input type="file" class="form-control" name="anexo"/><br/>
-				<br/><br/>
 				<button type="submit" class="btn btn-lg btn-primary btn-block">Cadastrar Task</button>
 			</form>
 		</div>
