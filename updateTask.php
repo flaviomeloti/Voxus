@@ -44,10 +44,21 @@
                     $nome = $_POST['nome'];
                     $descricao = $_POST['descricao'];        
                     $id = $_SESSION['idTask'];
-                    echo $id;
-                    $editaTask = "UPDATE `tasks` SET `nome` = '$nome', `descricao` = '$descricao' WHERE `tasks`.`id` = '$id' ";
-                    $update = mysqli_query($conexao, $editaTask);
-                    header("Location: tarefas.php");
+                    if($_POST['nome'] == "" && $_POST['descricao'] == ""){
+                        header("Location: tarefas.php");
+                    }elseif($_POST['nome'] == ""){
+                        $editaTask = "UPDATE `tasks` SET `descricao` = '$descricao' WHERE `tasks`.`id` = '$id' ";
+                        $update = mysqli_query($conexao, $editaTask);
+                        header("Location: tarefas.php");
+                    }elseif($_POST['descricao'] == ""){
+                        $editaTask = "UPDATE `tasks` SET `nome` = '$nome' WHERE `tasks`.`id` = '$id' ";
+                        $update = mysqli_query($conexao, $editaTask);
+                        header("Location: tarefas.php");
+                    }else{
+                        $editaTask = "UPDATE `tasks` SET `nome` = '$nome', `descricao` = '$descricao' WHERE `tasks`.`id` = '$id' ";
+                        $update = mysqli_query($conexao, $editaTask);
+                        header("Location: tarefas.php");
+                    }
                 }else{
                     $select = $_POST['tarefa'];                   
                     $buscaTask = "SELECT * FROM tasks WHERE id = '$select'";
@@ -58,9 +69,9 @@
                             <h2 class="form-signin-heading">Edicao Tasks</h2>
                             </br>
                             <label for="name" class="sr-only">Nome</label>
-                            <input type="text" class="form-control" name="nome" placeholder="'.$resultado['nome'].'" required/></br>
+                            <input type="text" class="form-control" name="nome" placeholder="'.$resultado['nome'].'"/></br>
                             <label for="descricao" class="sr-only">Descrição</label>
-                            <textarea rows="4" class="form-control" name="descricao" placeholder="'.$resultado['descricao'].'" required></textarea>
+                            <textarea rows="4" class="form-control" name="descricao" placeholder="'.$resultado['descricao'].'"></textarea>
                             <br/>
                             <button type="submit" class="btn btn-lg btn-primary btn-block">Editar Task</button>
                         </form>
