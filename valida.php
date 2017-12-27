@@ -3,6 +3,7 @@
     include("conexao.php");    
         $email = $_POST['email'];
         $senha = $_POST['senha'];
+        $senha = md5($senha);
         $buscaUsuario = "SELECT * FROM usuarios WHERE email = '$email' && senha = '$senha'";
         $resul = mysqli_query($conexao, $buscaUsuario);
         $resultado = mysqli_fetch_assoc($resul);

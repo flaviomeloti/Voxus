@@ -4,6 +4,7 @@
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
+    $senha = md5($senha);
     $confere = "SELECT * FROM usuarios WHERE email = '$email'";
     $resul = mysqli_query($conexao, $confere);    
     $resultado = mysqli_fetch_assoc($resul);
